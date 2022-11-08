@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -21,13 +22,27 @@ public class CharacterSelection : MonoBehaviour
     public void ChangeCharacter(bool next)
     {
         characters[selectedCharacter].SetActive(false);
-        selectedCharacter = next ? (selectedCharacter + 1) % characters.Length : 
-            selectedCharacter = (selectedCharacter - 1) % characters.Length;
+        if (next)
+        {
+            selectedCharacter = (selectedCharacter + 1) % characters.Length;
+        }
+        else
+        {
+            selectedCharacter--;
+            if (selectedCharacter < 0)
+            {
+                selectedCharacter += characters.Length;
+            }
+        }
         characters[selectedCharacter].SetActive(true);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void StartGame()
     {
-        
+        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+        SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 }
