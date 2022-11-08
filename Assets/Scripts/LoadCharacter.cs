@@ -28,6 +28,6 @@ public class LoadCharacter : MonoBehaviour
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter", 0);
         GameObject prefab = characterPrefabs[selectedCharacter];
         GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-        label.text = prefab.name;
+        label.text = "You are playing as the " + prefab.name;
     }
 }
