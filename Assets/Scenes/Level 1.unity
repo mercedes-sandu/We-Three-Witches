@@ -333,6 +333,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1404092052}
   - component: {fileID: 1404092053}
+  - component: {fileID: 1404092055}
+  - component: {fileID: 1404092054}
   m_Layer: 0
   m_Name: Game Master
   m_TagString: Untagged
@@ -373,6 +375,32 @@ MonoBehaviour:
   - {fileID: 6258619782715208265, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
   spawnPoint: {fileID: 313513319}
   label: {fileID: 2142228693}
+--- !u!114 &1404092054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404092051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1e23c24b8332a48acbadc36ff4af23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 640
+  height: 340
+--- !u!114 &1404092055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404092051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918cc24c102113c448a9da1df272668c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1956863467
 GameObject:
   m_ObjectHideFlags: 0
