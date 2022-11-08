@@ -103,7 +103,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: R_witch_take_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 845
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cf633e8c6b7c144817be54032fc1ee
+      internalID: 1312171390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 780
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecea3dcfbbc6024385f938a0e461590
+      internalID: 293222546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 715
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cc8371aa293634ea6df70091b67c9d
+      internalID: -936293790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 650
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcfc0631a22e9a4b808ea9c38fff67c
+      internalID: -987683204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2acb326f4384e468fbbbe518b2bf56
+      internalID: 386233284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 520
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87235332eee3cb04ab5502d53cc44f2b
+      internalID: -323900105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b91f86e5ad8bb24cb7529d5a47b8966
+      internalID: -697122316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403476b6c53f8574f8bc443f8651f957
+      internalID: 760161779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2c485d4badbb24492a90eb91626328
+      internalID: -377404228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8bb0407a161029449940e4112f3702f
+      internalID: 724600444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626ee5fffb9e4664fb206da06b1af1e5
+      internalID: 259865868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8b488f17353954f8e54a231835b770
+      internalID: -2069776344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a16fdb5f9b16445a7660426c746800
+      internalID: -1065438422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_take_death_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939470490fffe4a4ba9ff717d7c30227
+      internalID: 2058679311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +408,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      R_witch_take_death_5: -323900105
+      R_witch_take_death_2: -936293790
+      R_witch_take_death_7: 760161779
+      R_witch_take_death_0: 1312171390
+      R_witch_take_death_12: -1065438422
+      R_witch_take_death_13: 2058679311
+      R_witch_take_death_3: -987683204
+      R_witch_take_death_8: -377404228
+      R_witch_take_death_1: 293222546
+      R_witch_take_death_9: 724600444
+      R_witch_take_death_11: -2069776344
+      R_witch_take_death_10: 259865868
+      R_witch_take_death_4: 386233284
+      R_witch_take_death_6: -697122316
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

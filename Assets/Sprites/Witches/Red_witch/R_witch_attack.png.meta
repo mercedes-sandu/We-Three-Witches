@@ -103,7 +103,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: R_witch_attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4624203d3fb8a6642811ad2d97d828b8
+      internalID: -383690084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_attack_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eade24c4e5c06ac45873b931fc40d5aa
+      internalID: -1488345914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_attack_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb181449e7166440919d145ab61f983
+      internalID: 1637649092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_attack_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e97d0ab578ec1418105142e9c0aefd
+      internalID: 668094388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_attack_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f034dab37bffe2d4685d39c0c6beb929
+      internalID: -1585257706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_attack_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab1e96ab767fcc47a038f5061d7bd19
+      internalID: -1902746189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_attack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e80395a2b35433408729f47c6ddd05c
+      internalID: -1011330725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_attack_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 155
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa87e2e3351af9e4b931e0db9757fa85
+      internalID: 1689507735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +282,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      R_witch_attack_0: -383690084
+      R_witch_attack_1: -1488345914
+      R_witch_attack_7: 1689507735
+      R_witch_attack_3: 668094388
+      R_witch_attack_6: -1011330725
+      R_witch_attack_2: 1637649092
+      R_witch_attack_4: -1585257706
+      R_witch_attack_5: -1902746189
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

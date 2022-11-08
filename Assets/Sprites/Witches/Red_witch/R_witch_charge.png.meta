@@ -103,7 +103,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: R_witch_charge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29fff613c393d1846b703fa38804803d
+      internalID: 1541403968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 520
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae8259a6ad28784fbe2a236b8a237cb
+      internalID: -80818977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0253997f31736e24fa286d676b60b44c
+      internalID: -888312722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7698f1c9e33014da526cfe9a99d499
+      internalID: -1066426054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68ddf61bff7cce4797ab17209e17b4c
+      internalID: 1166088039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93637b289acd19c4187bdfcf4e4f8a15
+      internalID: 1665859421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96cc69e61efd5aa4699c208fcfe20120
+      internalID: -319070346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84954e878b03c740a3ec6850c9b56d9
+      internalID: 1699677630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de000104cc781b74ab80c8cffc2c87db
+      internalID: -1138204112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_witch_charge_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 77.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b17535cf69d3464895994a2e42aa200
+      internalID: 128610382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +324,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      R_witch_charge_1: -80818977
+      R_witch_charge_4: 1166088039
+      R_witch_charge_0: 1541403968
+      R_witch_charge_5: 1665859421
+      R_witch_charge_2: -888312722
+      R_witch_charge_3: -1066426054
+      R_witch_charge_7: 1699677630
+      R_witch_charge_6: -319070346
+      R_witch_charge_8: -1138204112
+      R_witch_charge_9: 128610382
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
