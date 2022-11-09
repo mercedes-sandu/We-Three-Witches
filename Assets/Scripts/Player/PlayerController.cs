@@ -7,57 +7,57 @@ using UnityEngine.Animations;
 public class PlayerController : MonoBehaviour
 {
     /// <summary>
-    /// 
+    /// The player's horizontal movement speed.
     /// </summary>
     [SerializeField] private float speed = 5f;
     
     /// <summary>
-    /// 
+    /// The player's vertical jump force.
     /// </summary>
     [SerializeField] private float jumpForce = 10f;
     
     /// <summary>
-    /// 
+    /// The GameObject which detects if the player is grounded.
     /// </summary>
     [SerializeField] private Transform groundCheck;
 
     /// <summary>
-    /// 
+    /// What is tagged as the ground for the player.
     /// </summary>
     [SerializeField] private LayerMask groundLayer;
 
     /// <summary>
-    /// 
+    /// The horizontal movement input.
     /// </summary>
     private float _horizontal;
     
     /// <summary>
-    /// 
+    /// True if the player is facing right, false if the player is facing left.
     /// </summary>
     private bool _facingRight = true;
     
     /// <summary>
-    /// 
+    /// The direction in which the mouse is pointing from the player's current position.
     /// </summary>
     private Vector2 _pointingDirection = Vector2.zero;
 
     /// <summary>
-    /// 
+    /// The player's Rigidbody2D component.
     /// </summary>
     private Rigidbody2D _rb;
     
     /// <summary>
-    /// 
+    /// The player's Animator component.
     /// </summary>
     private Animator _anim;
 
     /// <summary>
-    /// 
+    /// The main camera in the scene.
     /// </summary>
     private Camera _camera;
 
     /// <summary>
-    /// 
+    /// Initializes components.
     /// </summary>
     void Start()
     {
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Detects input for the player and changes the player's state accordingly.
     /// </summary>
     void Update()
     {
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Flips the player's sprite if the player is moving in a different direction.
     /// </summary>
     private void Flip()
     {
@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Returns whether the player is grounded.
     /// </summary>
     /// <returns>True if the player is grounded, false otherwise.</returns>
     private bool IsGrounded() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
