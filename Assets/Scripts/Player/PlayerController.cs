@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Animations;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
@@ -35,11 +33,6 @@ public class PlayerController : MonoBehaviour
     /// True if the player is facing right, false if the player is facing left.
     /// </summary>
     private bool _facingRight = true;
-    
-    /// <summary>
-    /// The direction in which the mouse is pointing from the player's current position.
-    /// </summary>
-    private Vector2 _pointingDirection = Vector2.zero;
 
     /// <summary>
     /// The player's Rigidbody2D component.
@@ -95,20 +88,15 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.5f);
         }
 
-        // Shooting
-        _pointingDirection = (_camera.WorldToScreenPoint(Input.mousePosition) - transform.position).normalized;
-        if (Input.GetMouseButtonDown(0))
-        {
-            // todo: shoot
-            Debug.Log("player shot in direction " + _pointingDirection);
-        }
-        
         // Special ability
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // todo: special ability
             Debug.Log("player used special ability");
         }
+        
+        // Animation
+        _anim.SetBool("moving", _horizontal != 0f);
         
         // Flip sprite if changing direction
         Flip();
@@ -130,9 +118,7 @@ public class PlayerController : MonoBehaviour
         if (_facingRight && _horizontal < 0f || !_facingRight && _horizontal > 0f)
         {
             _facingRight = !_facingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1;
-            transform.localScale = localScale;
+            transform.Rotate(0, 180f, 0);
         }
     }
 
