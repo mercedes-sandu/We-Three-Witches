@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918cc24c102113c448a9da1df272668c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 0}
 --- !u!1 &1956863467
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +497,7 @@ GameObject:
   - component: {fileID: 2020691793}
   - component: {fileID: 2020691792}
   - component: {fileID: 2020691791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

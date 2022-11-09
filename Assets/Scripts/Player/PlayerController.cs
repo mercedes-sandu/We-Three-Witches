@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.Animations;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class PlayerController : MonoBehaviour
 {
     /// <summary>
@@ -13,11 +15,26 @@ public class PlayerController : MonoBehaviour
     /// 
     /// </summary>
     [SerializeField] private float jumpForce = 10f;
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    [SerializeField] private Transform groundCheck;
 
     /// <summary>
     /// 
     /// </summary>
-    private Vector2 _facingDirection = Vector2.right;
+    [SerializeField] private LayerMask groundLayer;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private float _horizontal;
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    private bool _facingRight = true;
     
     /// <summary>
     /// 
@@ -34,16 +51,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private Animator _anim;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    private bool _grounded;
-
-    /// <summary>
-    /// 
-    /// </summary>
-    private bool _running;
-    
     /// <summary>
     /// 
     /// </summary>
@@ -64,38 +71,74 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
-        Vector2 dir = Vector2.zero;
-        _pointingDirection = (_camera.WorldToScreenPoint(Input.mousePosition) - transform.position).normalized;
-        
-        if (_grounded && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)))
-        {
-            dir.y = 1f;
-            _grounded = false;
-        }
-        
+        // Moving horizontally
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            dir.x = -1f;
+            _horizontal = -1f;
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            dir.x = 1f;
+            _horizontal = 1f;
+        }
+        else
+        {
+            _horizontal = 0f;
         }
 
+        // Jumping
+        if (IsGrounded() && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)))
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
+        }
+        if (IsGrounded() && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space)))
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.5f);
+        }
+
+        // Shooting
+        _pointingDirection = (_camera.WorldToScreenPoint(Input.mousePosition) - transform.position).normalized;
         if (Input.GetMouseButtonDown(0))
         {
             // todo: shoot
             Debug.Log("player shot in direction " + _pointingDirection);
         }
-
+        
+        // Special ability
         if (Input.GetKey(KeyCode.E))
         {
             // todo: special ability
             Debug.Log("player used special ability");
         }
         
-        _running = dir.magnitude > 0f;
-        
-        _rb.velocity = dir.normalized * speed;
+        // Flip sprite if changing direction
+        Flip();
     }
+
+    /// <summary>
+    /// Moves the player horizontally.
+    /// </summary>
+    void FixedUpdate()
+    {
+        _rb.velocity = new Vector2(_horizontal * speed, _rb.velocity.y);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void Flip()
+    {
+        if (_facingRight && _horizontal < 0f || !_facingRight && _horizontal > 0f)
+        {
+            _facingRight = !_facingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>True if the player is grounded, false otherwise.</returns>
+    private bool IsGrounded() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
 }
