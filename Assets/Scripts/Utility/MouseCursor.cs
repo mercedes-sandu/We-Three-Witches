@@ -1,35 +1,41 @@
+using System;
 using UnityEngine;
 
 public class MouseCursor : MonoBehaviour
 {
     /// <summary>
-    /// 
+    /// The normal cursor texture.
     /// </summary>
-    [SerializeField] private Texture2D cursorTexture;
-    
+    [SerializeField] private Texture2D cursor;
+
     /// <summary>
-    /// 
+    /// The clicked cursor texture.
     /// </summary>
-    private const CursorMode Mode = CursorMode.Auto;
-    
+    [SerializeField] private Texture2D cursorClicked;
+
     /// <summary>
-    /// 
+    /// Changes the cursor to the normal texture.
     /// </summary>
-    private readonly Vector2 _hotSpot = Vector2.zero;
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    void OnMouseEnter()
+    void Awake()
     {
-        Cursor.SetCursor(cursorTexture, _hotSpot, Mode);
+        ChangeCursor(cursor);
     }
 
     /// <summary>
-    /// 
+    /// Changes the cursor to the specified texture.
     /// </summary>
-    void OnMouseExit()
+    /// <param name="cursorType">The new cursor texture.</param>
+    private void ChangeCursor(Texture2D cursorType)
     {
-        Cursor.SetCursor(null, Vector2.zero, Mode);
+        Cursor.SetCursor(cursorType, new Vector2(cursorType.width / 2, cursorType.height / 2), 
+            CursorMode.Auto);
+    }
+
+    /// <summary>
+    /// Changes the cursor texture when the mouse is clicked.
+    /// </summary>
+    void Update()
+    {
+        ChangeCursor(Input.GetMouseButton(0) ? cursorClicked : cursor);
     }
 }

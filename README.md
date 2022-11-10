@@ -6,7 +6,6 @@ Oak Woods Environment Asset: https://brullov.itch.io/oak-woods
 Fantasy Mushroom Pack: https://ssugmi.itch.io/fantasy-mushroom-pack
 Animated Graveyard Goon: https://admurin.itch.io/graveyard-goon
 Kadith's Icons: https://kadith.itch.io/kadiths-free-icons
-Crosshair For Your Shooter 2D Games: https://s-a-t-u-r-n.itch.io/crosshair-for-your-shooter-2d-games
 Pixel Art GUI Elements: https://mounirtohami.itch.io/pixel-art-gui-elements
 Lucid Icon Pack: https://leo-red.itch.io/lucid-icon-pack
 Pixel Heart and Mana UI: https://hochupitsu.itch.io/heart-and-mana
