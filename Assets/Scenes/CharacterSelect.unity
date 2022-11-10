@@ -1075,6 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918cc24c102113c448a9da1df272668c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 0}
 --- !u!1001 &554434587468211499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1082,6 +1083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1403234056}
     m_Modifications:
+    - target: {fileID: 554434587421824836, guid: 5187ff73c48fdd04a95dcc13d683e67d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 554434587421824837, guid: 5187ff73c48fdd04a95dcc13d683e67d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1134,6 +1139,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4742738279774994931, guid: 5187ff73c48fdd04a95dcc13d683e67d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749182775106627592, guid: 5187ff73c48fdd04a95dcc13d683e67d, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5705160322926072714, guid: 5187ff73c48fdd04a95dcc13d683e67d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746408073097221496, guid: 5187ff73c48fdd04a95dcc13d683e67d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5187ff73c48fdd04a95dcc13d683e67d, type: 3}
 --- !u!1001 &4847116140154853604
@@ -1143,6 +1164,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1403234056}
     m_Modifications:
+    - target: {fileID: -6888691641114836601, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2830336656411588697, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746670845071948305, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4847116139491509664, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1187,11 +1220,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4847116139491509665, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4847116139491509670, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
       propertyPath: m_Name
       value: White Witch
       objectReference: {fileID: 0}
     - target: {fileID: 4847116139491509670, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057949125635373078, guid: 30587cb714d195a45a733efafd8d6bd7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1204,12 +1245,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1403234056}
     m_Modifications:
+    - target: {fileID: -4611934916400203272, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3299825169376209223, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351347089099553304, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6258619782715208265, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
       propertyPath: m_Name
       value: Red Witch
       objectReference: {fileID: 0}
     - target: {fileID: 6258619782715208265, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258619782715208268, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6258619782715208271, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
@@ -1254,6 +1311,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6258619782715208271, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715060091712053562, guid: 2285da0aee66be1449e7cf38200cac82, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

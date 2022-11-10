@@ -78,7 +78,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6127026535104405911, guid: 7a5740f261f01bf4797311c21208ac5f, type: 3}
   fireRate: 0
-  damage: 10
   firePoint: {fileID: 6849854796345148689}
 --- !u!1 &4847116139491509670
 GameObject:
@@ -94,6 +93,7 @@ GameObject:
   - component: {fileID: 8335789563146784916}
   - component: {fileID: -2830336656411588697}
   - component: {fileID: -6888691641114836601}
+  - component: {fileID: 3098608799219193244}
   m_Layer: 3
   m_Name: White Witch
   m_TagString: Player
@@ -156,8 +156,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -213476111
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1870666637, guid: 67ab67a899073d04e8426de1c1d529d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -255,6 +255,19 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &3098608799219193244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847116139491509670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7681150744a2242b4d8aabe3a23a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
 --- !u!1 &7057949125635373078
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour
     private Camera _camera;
 
     /// <summary>
+    /// The player component.
+    /// </summary>
+    private Player _playerComponent;
+
+    /// <summary>
     /// Initializes components.
     /// </summary>
     void Start()
@@ -57,6 +62,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _camera = Camera.main;
+        _playerComponent = GetComponent<Player>();
     }
 
     /// <summary>
@@ -92,6 +98,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             // todo: special ability
+            _playerComponent.ExpendMana();
             Debug.Log("player used special ability");
         }
         
