@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -12,6 +13,9 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private Player _player;
 
+    /// <summary>
+    /// Initializes components.
+    /// </summary>
     void Start()
     {
         _player = FindObjectOfType<Player>();
@@ -36,5 +40,17 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+    }
+
+    /// <summary>
+    /// Detects collisions and takes damage accordingly.
+    /// </summary>
+    /// <param name="col">The collision.</param>
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.CompareTag("Player") && _player.IsUsingSpecial())
+        {
+            TakeDamage(_player.GetSpecialDamage());
+        }
     }
 }

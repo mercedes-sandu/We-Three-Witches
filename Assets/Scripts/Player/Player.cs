@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     /// The player's health bar.
     /// </summary>
     private Image _healthBar;
+
+    /// <summary>
+    /// The animator component.
+    /// </summary>
+    private Animator _anim;
     
     /// <summary>
     /// The player's health.
@@ -82,6 +87,8 @@ public class Player : MonoBehaviour
         
         _initialHealthBarWidth = _healthBar.rectTransform.rect.width;
         _currentHealthBarWidth = _initialHealthBarWidth;
+
+        _anim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -165,8 +172,21 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Returns the player's current number of mana points.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Mana.</returns>
     public int GetMana() => _mana;
+
+    /// <summary>
+    /// Returns the player's special damage amount.
+    /// </summary>
+    /// <returns>Special damage amount.</returns>
+    public int GetSpecialDamage() => SpecialDamage;
+    
+    /// <summary>
+    /// Returns whether the player is using their special ability.
+    /// </summary>
+    /// <returns>True if the player is using their special ability, false otherwise.</returns>
+    public bool IsUsingSpecial() => _anim.GetCurrentAnimatorStateInfo(0).IsName(name
+        .Replace(" ", "").Replace("(Clone)", "") + "Special");
 }
