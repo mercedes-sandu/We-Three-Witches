@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,22 +15,37 @@ public class Player : MonoBehaviour
     private int _health = 100;
 
     /// <summary>
-    /// The player's mana.
+    /// The player's total mana.
+    /// </summary>
+    private const int TotalMana = 3;
+
+    /// <summary>
+    /// The player's current mana.
     /// </summary>
     private int _mana = 3;
 
     /// <summary>
-    /// 
+    /// True if the player is regenerating mana, false otherwise.
+    /// </summary>
+    private bool _isRegeneratingMana = false;
+
+    /// <summary>
+    /// The rate at which mana regenerates (1 every ManaRegenerationRate seconds).
+    /// </summary>
+    private const float ManaRegenerationRate = 10f;
+
+    /// <summary>
+    /// The mana points.
     /// </summary>
     private readonly Image[] _manaPoints = new Image[3];
     
     /// <summary>
-    /// 
+    /// The sprite for a full mana point.
     /// </summary>
     private Sprite _manaFull;
     
     /// <summary>
-    /// 
+    /// The sprite for an empty mana point.
     /// </summary>
     private Sprite _manaEmpty;
     
@@ -62,6 +78,17 @@ public class Player : MonoBehaviour
         _initialHealthBarWidth = _healthBar.rectTransform.rect.width;
         _currentHealthBarWidth = _initialHealthBarWidth;
     }
+
+    /// <summary>
+    /// Regenerates the player's mana when necessary.
+    /// </summary>
+    void Update()
+    {
+        if (_mana < TotalMana && !_isRegeneratingMana)
+        {
+            StartCoroutine(RegenerateMana());
+        }
+    }
     
     /// <summary>
     /// Damages the player with the specified amount and updates the health bar.
@@ -92,11 +119,36 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Expends a mana point.
     /// </summary>
     public void ExpendMana()
     {
         _mana--;
+        _manaPoints[_mana].sprite = _manaEmpty;
+    }
+
+    /// <summary>
+    /// Regains a mana point.
+    /// </summary>
+    private void RegainMana()
+    {
+        _mana++;
+        _manaPoints[_mana - 1].sprite = _manaFull;
+    }
+
+    /// <summary>
+    /// Regenerates the player's mana.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator RegenerateMana()
+    {
+        _isRegeneratingMana = true;
+        while (_mana < TotalMana)
+        {
+            RegainMana();
+            yield return new WaitForSeconds(ManaRegenerationRate);
+        }
+        _isRegeneratingMana = false;
     }
 
     /// <summary>
@@ -106,4 +158,10 @@ public class Player : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public int GetMana() => _mana;
 }

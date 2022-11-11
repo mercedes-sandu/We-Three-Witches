@@ -45,11 +45,6 @@ public class PlayerController : MonoBehaviour
     private Animator _anim;
 
     /// <summary>
-    /// The main camera in the scene.
-    /// </summary>
-    private Camera _camera;
-
-    /// <summary>
     /// The player component.
     /// </summary>
     private Player _playerComponent;
@@ -60,9 +55,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
-        _camera = Camera.main;
         _playerComponent = GetComponent<Player>();
+        _anim = GetComponent<Animator>();
+        
+        _anim.SetBool("moving", false);
     }
 
     /// <summary>
@@ -95,11 +91,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Special ability
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && _playerComponent.GetMana() > 0)
         {
-            // todo: special ability
+            _anim.Play(name.Replace(" ", "").Replace("(Clone)", "") + "Special");
             _playerComponent.ExpendMana();
-            Debug.Log("player used special ability");
         }
         
         // Animation
