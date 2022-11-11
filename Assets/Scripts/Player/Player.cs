@@ -15,6 +15,11 @@ public class Player : MonoBehaviour
     private int _health = 100;
 
     /// <summary>
+    /// The amount of damage the player's special ability deals.
+    /// </summary>
+    private const int SpecialDamage = 20;
+
+    /// <summary>
     /// The player's total mana.
     /// </summary>
     private const int TotalMana = 3;

@@ -6,6 +6,16 @@ public class Enemy : MonoBehaviour
     /// The enemy's health.
     /// </summary>
     private int _health = 100;
+
+    /// <summary>
+    /// The player.
+    /// </summary>
+    private Player _player;
+
+    void Start()
+    {
+        _player = FindObjectOfType<Player>();
+    }
     
     /// <summary>
     /// Damages the enemy with the specified amount.
