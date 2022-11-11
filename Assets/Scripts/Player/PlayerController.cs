@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// The player's vertical jump force.
     /// </summary>
-    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float jumpForce = 15f;
     
     /// <summary>
     /// The GameObject which detects if the player is grounded.
