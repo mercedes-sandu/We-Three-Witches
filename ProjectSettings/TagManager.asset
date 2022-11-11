@@ -52,6 +52,9 @@ TagManager:
   - name: Decorative Tiles
     uniqueID: 4072026913
     locked: 0
+  - name: Enemy
+    uniqueID: 3705082865
+    locked: 0
   - name: Player
     uniqueID: 4081491185
     locked: 0
