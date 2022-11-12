@@ -1,8 +1,13 @@
-using System;
+using Pathfinding;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // /// <summary>
+    // /// 
+    // /// </summary>
+    // public AIPath aiPath;
+    
     /// <summary>
     /// The damage the enemy deals.
     /// </summary>
@@ -14,12 +19,39 @@ public class Enemy : MonoBehaviour
     private int _health = 100;
 
     /// <summary>
+    /// 
+    /// </summary>
+    private GameObject _player;
+    
+    /// <summary>
+    /// The player component of the player.
+    /// </summary>
+    private Player _playerComponent;
+    
+    /// <summary>
+    /// Subscribes to GameEvents.
+    /// </summary>
+    void Awake()
+    {
+        GameEvent.OnPlayerCreate += CreatePlayer;
+    }
+
+    /// <summary>
+    /// Initializes the player variables.
+    /// </summary>
+    /// <param name="player">The player.</param>
+    private void CreatePlayer(GameObject player)
+    {
+        _playerComponent = player.GetComponent<Player>();
+    }
+
+    /// <summary>
     /// Damages the enemy with the specified amount.
     /// </summary>
-    /// <param name="damage">The damage inflicted to the enemy.</param>
-    public void TakeDamage(int damage)
+    /// <param name="d">The damage inflicted to the enemy.</param>
+    public void TakeDamage(int d)
     {
-        _health -= damage;
+        _health -= d;
         if (_health <= 0)
         {
             Die();
@@ -35,28 +67,29 @@ public class Enemy : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns the damage the enemy deals.
-    /// </summary>
-    /// <returns>Enemy damage.</returns>
-    public int GetDamage() => damage;
-
-    /// <summary>
     /// Takes damage or damages the collider accordingly.
     /// </summary>
     /// <param name="col">The collider.</param>
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.CompareTag("Player"))
+        if (col.collider.CompareTag("Player"))
         {
-            var player = col.GetComponent<Player>();
-            if (player.IsUsingSpecial())
+            if (_playerComponent.IsUsingSpecial())
             {
-                TakeDamage(player.GetSpecialDamage());
+                TakeDamage(_playerComponent.GetSpecialDamage());
             }
             else
             {
-                player.TakeDamage(damage);
+                _playerComponent.TakeDamage(damage);
             }
         }
+    }
+
+    /// <summary>
+    /// Unsubscribes from GameEvents.
+    /// </summary>
+    void OnDestroy()
+    {
+        GameEvent.OnPlayerCreate -= CreatePlayer;
     }
 }

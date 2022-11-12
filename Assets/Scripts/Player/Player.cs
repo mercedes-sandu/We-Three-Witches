@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
     {
         _health -= damage;
         
+        // todo: fix health bar ui
         float widthModifier = _initialHealthBarWidth * damage / _health;
         _currentHealthBarWidth -= widthModifier;
         _healthBar.rectTransform.sizeDelta = new Vector2(_currentHealthBarWidth, 
@@ -158,8 +159,8 @@ public class Player : MonoBehaviour
         _isRegeneratingMana = true;
         while (_mana < TotalMana)
         {
-            RegainMana();
             yield return new WaitForSeconds(ManaRegenerationRate);
+            RegainMana();
         }
         _isRegeneratingMana = false;
     }

@@ -16,4 +16,6 @@ Fall Squash Pixel Art Asset Pack: https://pop-shop-packs.itch.io/fall-squash-pix
 Fibberish Font: https://caffinate.itch.io/fibberish
 M6x11 Font: https://managore.itch.io/m6x11
 
+A* Pathfinding: https://arongranberg.com/astar/download
+
 Super Dialogue Audio Pack: https://dillonbecker.itch.io/sdap
