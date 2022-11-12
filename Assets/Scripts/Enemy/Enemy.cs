@@ -4,23 +4,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     /// <summary>
+    /// The damage the enemy deals.
+    /// </summary>
+    [SerializeField] private int damage = 10;
+    
+    /// <summary>
     /// The enemy's health.
     /// </summary>
     private int _health = 100;
 
-    /// <summary>
-    /// The player.
-    /// </summary>
-    private Player _player;
-
-    /// <summary>
-    /// Initializes components.
-    /// </summary>
-    void Start()
-    {
-        _player = FindObjectOfType<Player>();
-    }
-    
     /// <summary>
     /// Damages the enemy with the specified amount.
     /// </summary>
@@ -43,14 +35,28 @@ public class Enemy : MonoBehaviour
     }
 
     /// <summary>
-    /// Detects collisions and takes damage accordingly.
+    /// Returns the damage the enemy deals.
     /// </summary>
-    /// <param name="col">The collision.</param>
-    private void OnCollisionEnter2D(Collision2D col)
+    /// <returns>Enemy damage.</returns>
+    public int GetDamage() => damage;
+
+    /// <summary>
+    /// Takes damage or damages the collider accordingly.
+    /// </summary>
+    /// <param name="col">The collider.</param>
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.collider.CompareTag("Player") && _player.IsUsingSpecial())
+        if (col.CompareTag("Player"))
         {
-            TakeDamage(_player.GetSpecialDamage());
+            var player = col.GetComponent<Player>();
+            if (player.IsUsingSpecial())
+            {
+                TakeDamage(player.GetSpecialDamage());
+            }
+            else
+            {
+                player.TakeDamage(damage);
+            }
         }
     }
 }

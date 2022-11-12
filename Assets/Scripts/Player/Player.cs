@@ -137,6 +137,7 @@ public class Player : MonoBehaviour
     {
         _mana--;
         _manaPoints[_mana].sprite = _manaEmpty;
+        Debug.Log(_mana);
     }
 
     /// <summary>
@@ -176,13 +177,13 @@ public class Player : MonoBehaviour
     /// </summary>
     /// <returns>Mana.</returns>
     public int GetMana() => _mana;
-
-    /// <summary>
-    /// Returns the player's special damage amount.
-    /// </summary>
-    /// <returns>Special damage amount.</returns>
-    public int GetSpecialDamage() => SpecialDamage;
     
+    /// <summary>
+    /// Returns the amount of damage the player's special ability deals.
+    /// </summary>
+    /// <returns>Special damage.</returns>
+    public int GetSpecialDamage() => SpecialDamage;
+
     /// <summary>
     /// Returns whether the player is using their special ability.
     /// </summary>
