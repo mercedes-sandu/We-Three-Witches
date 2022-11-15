@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 7
+  speed: 30
   nextWaypointDistance: 3
   isFlying: 1
 --- !u!50 &6287106554835786502
