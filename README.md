@@ -12,6 +12,7 @@ Pixel Heart and Mana UI: https://hochupitsu.itch.io/heart-and-mana
 Pixel Health Bar Asset Pack 2: https://adwitr.itch.io/pixel-health-bar-asset-pack-2
 Animated Fires: https://stealthix.itch.io/animated-fires
 Fall Squash Pixel Art Asset Pack: https://pop-shop-packs.itch.io/fall-squash-pixel-art-asset-pack
+Bat Sprites: https://rentro-ghost.itch.io/bat-sprites
 
 Fibberish Font: https://caffinate.itch.io/fibberish
 M6x11 Font: https://managore.itch.io/m6x11
