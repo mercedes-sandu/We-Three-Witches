@@ -15,8 +15,10 @@ Fall Squash Pixel Art Asset Pack: https://pop-shop-packs.itch.io/fall-squash-pix
 Bat Sprites: https://rentro-ghost.itch.io/bat-sprites
 
 Fibberish Font: https://caffinate.itch.io/fibberish
-M6x11 Font: https://managore.itch.io/m6x11
 
 A* Pathfinding: https://arongranberg.com/astar/download
 
-Super Dialogue Audio Pack: https://dillonbecker.itch.io/sdap
+Magic sound effect: https://www.youtube.com/watch?v=2MhHiKajn8o
+Magic attack sound effect: https://www.youtube.com/watch?v=psOepuTFy9E
+Battle music: https://www.youtube.com/watch?v=9gBTKiVqprE
+Roblox oof sound effect: https://www.youtube.com/watch?v=xYJ63OTMDL4

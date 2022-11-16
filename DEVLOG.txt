@@ -1,0 +1,54 @@
+Aesthetic goals:
+(1) Have an overall spooky vibe that makes the players feel like it's Halloween.
+(2) Give players a thrill when killing enemies with magic.
+
+Success signs:
+- Players are on edge, shooting at many enemies
+- Players are moving around rapidly in the world
+
+Failure signs:
+- Players feel bored
+- Players give up
+
+Core loop:
+Enemy spawns -> shoot at or attack enemy with special -> kill enemy
+
+Dev Logs:
+11/7:
+- Created project and imported assets
+- Created character select scene
+
+11/8:
+- Finished a bunch of player animations
+- Worked on player movement
+- Set up level environment and tiles
+
+11/9:
+- Finished player movement
+- Created main menu
+
+11/10:
+- Created custom cursor
+
+11/11:
+- Skeleton animations
+- Made it so that the player can't leave the bounds of the camera
+- Finished implementing player special abilities
+
+11/12:
+- Enemy AI
+- Bat animations
+
+11/15:
+- UI
+- Polishing environment and tiles
+- Adding decorations
+- Debugging enemy behavior
+- Added audio
+- Game over screen
+
+Postmortem
+- Goal was to make a spooky witchy platformer
+- Was able to complete most of goals, aside from some bugs with enemy AI movement
+- Sprites and animations worked really well and contributed well to the aesthetic goals
+- I wish I had started earlier!

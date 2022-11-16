@@ -13,9 +13,19 @@ public class Projectile : MonoBehaviour
     [SerializeField] private int damage = 5;
 
     /// <summary>
+    /// The shoot sound.
+    /// </summary>
+    [SerializeField] private AudioClip shootSound;
+
+    /// <summary>
     /// The Rigidbody2D component of the projectile.
     /// </summary>
     private Rigidbody2D _rb;
+    
+    /// <summary>
+    /// The audio source component.
+    /// </summary>
+    private AudioSource _audioSource;
     
     /// <summary>
     /// Sets components and projectile velocity.
@@ -23,6 +33,8 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.PlayOneShot(shootSound);
         _rb.velocity = transform.right * speed;
     }
 

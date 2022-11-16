@@ -25,6 +25,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     /// <summary>
+    /// The special attack sound.
+    /// </summary>
+    [SerializeField] private AudioClip specialAttackSound;
+
+    /// <summary>
     /// The horizontal movement input.
     /// </summary>
     private float _horizontal;
@@ -50,6 +55,11 @@ public class PlayerController : MonoBehaviour
     private Player _playerComponent;
 
     /// <summary>
+    /// The audio source component.
+    /// </summary>
+    private AudioSource _audioSource;
+
+    /// <summary>
     /// Initializes components.
     /// </summary>
     void Start()
@@ -57,6 +67,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _playerComponent = GetComponent<Player>();
         _anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         
         _anim.SetBool("moving", false);
     }
@@ -93,6 +104,7 @@ public class PlayerController : MonoBehaviour
         // Special ability
         if (Input.GetKeyDown(KeyCode.E) && _playerComponent.GetMana() > 0)
         {
+            _audioSource.PlayOneShot(specialAttackSound);
             _anim.Play(name.Replace(" ", "").Replace("(Clone)", "") + "Special");
             _playerComponent.ExpendMana();
         }

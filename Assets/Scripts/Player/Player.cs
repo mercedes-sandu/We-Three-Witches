@@ -5,6 +5,11 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     /// <summary>
+    /// The damaged sound.
+    /// </summary>
+    [SerializeField] private AudioClip damagedSound;
+    
+    /// <summary>
     /// The player's health bar.
     /// </summary>
     private Image _healthBar;
@@ -17,7 +22,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// The player's maximum health.
     /// </summary>
-    private int _maxHealth = 100;
+    private readonly int _maxHealth = 100;
     
     /// <summary>
     /// The player's current health.
@@ -64,6 +69,16 @@ public class Player : MonoBehaviour
     /// </summary>
     private Sprite _manaEmpty;
 
+    /// <summary>
+    /// The game over canvas.
+    /// </summary>
+    private Canvas _gameOverCanvas;
+    
+    /// <summary>
+    /// The audio source component.
+    /// </summary>
+    private AudioSource _audioSource;
+
     void Start()
     {
         _healthBar = GameObject.Find("Health Bar").GetComponent<Image>();
@@ -79,6 +94,11 @@ public class Player : MonoBehaviour
         {
             point.sprite = _manaFull;
         }
+        
+        _gameOverCanvas = GameObject.Find("Game Over Canvas").GetComponent<Canvas>();
+        _gameOverCanvas.enabled = false;
+        
+        _audioSource = GetComponent<AudioSource>();
 
         _anim = GetComponent<Animator>();
     }
@@ -100,23 +120,12 @@ public class Player : MonoBehaviour
     /// <param name="damage">The damage inflicted to the player.</param>
     public void TakeDamage(int damage)
     {
+        _audioSource.PlayOneShot(damagedSound);
+        
         _anim.Play(name.Replace(" ", "").Replace("(Clone)", "") + "Damaged");
         
         _health -= damage;
-
-        // // todo: fix health bar ui
-        // float widthModifier = _initialHealthBarWidth * damage / _health;
-        // _currentHealthBarWidth -= widthModifier;
-        // _healthBar.rectTransform.sizeDelta = new Vector2(_currentHealthBarWidth, 
-        //     _healthBar.rectTransform.rect.height);
-        // _healthBar.rectTransform.anchoredPosition = new Vector2(_healthBar.rectTransform.anchoredPosition.x 
-        //                                                        - widthModifier, 
-        //     _healthBar.rectTransform.anchoredPosition.y);
-        // if (_currentHealthBarWidth <= 0)
-        // {
-        //     _currentHealthBarWidth = 0;
-        //     _healthBar.rectTransform.sizeDelta = new Vector2(0, _healthBar.rectTransform.rect.height);
-        // }
+        
         _healthBar.fillAmount = (float) _health / _maxHealth;
         
         if (_health <= 0)
@@ -133,7 +142,6 @@ public class Player : MonoBehaviour
     {
         _mana--;
         _manaPoints[_mana].sprite = _manaEmpty;
-        Debug.Log(_mana);
     }
 
     /// <summary>
@@ -165,7 +173,16 @@ public class Player : MonoBehaviour
     /// </summary>
     private void Die()
     {
-        Destroy(gameObject);
+        _anim.Play(name.Replace(" ", "").Replace("(Clone)", "") + "Die");
+    }
+
+    /// <summary>
+    /// Called by the animator when the death animation is finished.
+    /// </summary>
+    public void DestroyObject()
+    {
+        _gameOverCanvas.enabled = true;
+        Time.timeScale = 0;
     }
 
     /// <summary>

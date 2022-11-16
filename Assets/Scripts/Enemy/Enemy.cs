@@ -1,25 +1,57 @@
 using Pathfinding;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    // /// <summary>
-    // /// 
-    // /// </summary>
-    // public AIPath aiPath;
+    /// <summary>
+    /// The damaged sound.
+    /// </summary>
+    [SerializeField] private AudioClip damagedSound;
     
     /// <summary>
     /// The damage the enemy deals.
     /// </summary>
     [SerializeField] private int damage = 10;
+
+    /// <summary>
+    /// The enemy's health bar.
+    /// </summary>
+    [SerializeField] private Slider slider;
+
+    /// <summary>
+    /// The UI offset
+    /// </summary>
+    [SerializeField] private Vector3 offset;
+
+    /// <summary>
+    /// The UI scale.
+    /// </summary>
+    [SerializeField] private float scale;
     
     /// <summary>
-    /// The enemy's health.
+    /// The low health bar color.
+    /// </summary>
+    private readonly Color32 _lowHealthColor = new Color32(255, 255, 255, 255);
+    
+    /// <summary>
+    /// The high health bar color.
+    /// </summary>
+    private readonly Color32 _highHealthColor = new Color32(0, 255, 145, 255);
+
+    /// <summary>
+    /// The enemy's maximum health.
+    /// </summary>
+    private readonly int _maxHealth = 100;
+    
+    /// <summary>
+    /// The enemy's current health.
     /// </summary>
     private int _health = 100;
 
     /// <summary>
-    /// 
+    /// The enemy's current target.
     /// </summary>
     private GameObject _player;
     
@@ -32,6 +64,16 @@ public class Enemy : MonoBehaviour
     /// The animator component of the enemy.
     /// </summary>
     private Animator _anim;
+
+    /// <summary>
+    /// The main camera.
+    /// </summary>
+    private Camera _camera;
+    
+    /// <summary>
+    /// The audio source component.
+    /// </summary>
+    private AudioSource _audioSource;
     
     /// <summary>
     /// Subscribes to GameEvents.
@@ -47,6 +89,19 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _anim = GetComponent<Animator>();
+        _camera = Camera.main;
+        _audioSource = GetComponent<AudioSource>();
+        slider.value = _health;
+        slider.maxValue = _maxHealth;
+        slider.transform.localScale = new Vector3(scale, scale, 1);
+    }
+
+    /// <summary>
+    /// Updates the position of the health bar.
+    /// </summary>
+    void Update()
+    {
+        slider.transform.position = _camera.WorldToScreenPoint(transform.position + offset);
     }
     
     /// <summary>
@@ -64,8 +119,12 @@ public class Enemy : MonoBehaviour
     /// <param name="d">The damage inflicted to the enemy.</param>
     public void TakeDamage(int d)
     {
+        _audioSource.PlayOneShot(damagedSound);
         _anim.Play(name.Replace("(Clone)", "") + "Damaged");
         _health -= d;
+        slider.value = _health;
+        slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(_lowHealthColor, 
+            _highHealthColor, slider.normalizedValue);
         if (_health <= 0)
         {
             Die();
