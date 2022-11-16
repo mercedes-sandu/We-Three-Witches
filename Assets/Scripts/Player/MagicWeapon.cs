@@ -72,8 +72,7 @@ public class MagicWeapon : MonoBehaviour
     /// </summary>
     private void Shoot()
     {
-        _lookDirection = new Vector2(_camera.ScreenToWorldPoint(Input.mousePosition).x,
-            _camera.ScreenToWorldPoint(Input.mousePosition).y);
+        _lookDirection = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         _lookAngle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
         firePoint.rotation = Quaternion.Euler(0, 0, _lookAngle);
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);

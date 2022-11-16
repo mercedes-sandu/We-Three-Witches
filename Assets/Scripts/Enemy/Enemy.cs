@@ -27,6 +27,11 @@ public class Enemy : MonoBehaviour
     /// The player component of the player.
     /// </summary>
     private Player _playerComponent;
+
+    /// <summary>
+    /// The animator component of the enemy.
+    /// </summary>
+    private Animator _anim;
     
     /// <summary>
     /// Subscribes to GameEvents.
@@ -36,6 +41,14 @@ public class Enemy : MonoBehaviour
         GameEvent.OnPlayerCreate += CreatePlayer;
     }
 
+    /// <summary>
+    /// Initializes components.
+    /// </summary>
+    void Start()
+    {
+        _anim = GetComponent<Animator>();
+    }
+    
     /// <summary>
     /// Initializes the player variables.
     /// </summary>
@@ -51,6 +64,7 @@ public class Enemy : MonoBehaviour
     /// <param name="d">The damage inflicted to the enemy.</param>
     public void TakeDamage(int d)
     {
+        _anim.Play(name.Replace("(Clone)", "") + "Damaged");
         _health -= d;
         if (_health <= 0)
         {
@@ -62,6 +76,14 @@ public class Enemy : MonoBehaviour
     /// Called when the enemy reaches 0 health.
     /// </summary>
     private void Die()
+    {
+        _anim.Play(name.Replace("(Clone)", "") + "Die");
+    }
+
+    /// <summary>
+    /// Called by the animator when the die animation is finished.
+    /// </summary>
+    public void DestroyObject()
     {
         Destroy(gameObject);
     }

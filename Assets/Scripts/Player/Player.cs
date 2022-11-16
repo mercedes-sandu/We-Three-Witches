@@ -13,9 +13,14 @@ public class Player : MonoBehaviour
     /// The animator component.
     /// </summary>
     private Animator _anim;
+
+    /// <summary>
+    /// The player's maximum health.
+    /// </summary>
+    private int _maxHealth = 100;
     
     /// <summary>
-    /// The player's health.
+    /// The player's current health.
     /// </summary>
     private int _health = 100;
 
@@ -58,16 +63,6 @@ public class Player : MonoBehaviour
     /// The sprite for an empty mana point.
     /// </summary>
     private Sprite _manaEmpty;
-    
-    /// <summary>
-    /// The initial health bar width.
-    /// </summary>
-    private float _initialHealthBarWidth;
-    
-    /// <summary>
-    /// The current health bar width.
-    /// </summary>
-    private float _currentHealthBarWidth;
 
     void Start()
     {
@@ -84,9 +79,6 @@ public class Player : MonoBehaviour
         {
             point.sprite = _manaFull;
         }
-        
-        _initialHealthBarWidth = _healthBar.rectTransform.rect.width;
-        _currentHealthBarWidth = _initialHealthBarWidth;
 
         _anim = GetComponent<Animator>();
     }
@@ -108,21 +100,24 @@ public class Player : MonoBehaviour
     /// <param name="damage">The damage inflicted to the player.</param>
     public void TakeDamage(int damage)
     {
-        _health -= damage;
+        _anim.Play(name.Replace(" ", "").Replace("(Clone)", "") + "Damaged");
         
-        // todo: fix health bar ui
-        float widthModifier = _initialHealthBarWidth * damage / _health;
-        _currentHealthBarWidth -= widthModifier;
-        _healthBar.rectTransform.sizeDelta = new Vector2(_currentHealthBarWidth, 
-            _healthBar.rectTransform.rect.height);
-        _healthBar.rectTransform.anchoredPosition = new Vector2(_healthBar.rectTransform.anchoredPosition.x 
-                                                               - widthModifier, 
-            _healthBar.rectTransform.anchoredPosition.y);
-        if (_currentHealthBarWidth <= 0)
-        {
-            _currentHealthBarWidth = 0;
-            _healthBar.rectTransform.sizeDelta = new Vector2(0, _healthBar.rectTransform.rect.height);
-        }
+        _health -= damage;
+
+        // // todo: fix health bar ui
+        // float widthModifier = _initialHealthBarWidth * damage / _health;
+        // _currentHealthBarWidth -= widthModifier;
+        // _healthBar.rectTransform.sizeDelta = new Vector2(_currentHealthBarWidth, 
+        //     _healthBar.rectTransform.rect.height);
+        // _healthBar.rectTransform.anchoredPosition = new Vector2(_healthBar.rectTransform.anchoredPosition.x 
+        //                                                        - widthModifier, 
+        //     _healthBar.rectTransform.anchoredPosition.y);
+        // if (_currentHealthBarWidth <= 0)
+        // {
+        //     _currentHealthBarWidth = 0;
+        //     _healthBar.rectTransform.sizeDelta = new Vector2(0, _healthBar.rectTransform.rect.height);
+        // }
+        _healthBar.fillAmount = (float) _health / _maxHealth;
         
         if (_health <= 0)
         {

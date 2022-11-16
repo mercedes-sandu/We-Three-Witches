@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using TMPro;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -35,10 +36,10 @@ public class EnemyAI : MonoBehaviour
     /// </summary>
     private int _currentWayPoint = 0;
     
-    /// <summary>
-    /// True if the enemy has reached the end of the path, false otherwise.
-    /// </summary>
-    private bool _reachedEndOfPath = false;
+    // /// <summary>
+    // /// True if the enemy has reached the end of the path, false otherwise.
+    // /// </summary>
+    // private bool _reachedEndOfPath = false;
 
     /// <summary>
     /// The seeker component of the enemy.
@@ -49,6 +50,11 @@ public class EnemyAI : MonoBehaviour
     /// The Rigidbody2D component of the enemy.
     /// </summary>
     private Rigidbody2D _rb;
+
+    /// <summary>
+    /// The animator of the enemy.
+    /// </summary>
+    private Animator _anim;
     
     /// <summary>
     /// Subscribes to GameEvents.
@@ -65,9 +71,9 @@ public class EnemyAI : MonoBehaviour
     {
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         _rb.gravityScale = isFlying ? 0 : 6;
-        // todo: change linear drag?
-        
+
         InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
     }
 
@@ -116,14 +122,14 @@ public class EnemyAI : MonoBehaviour
 
         if (_currentWayPoint >= _path.vectorPath.Count)
         {
-            _reachedEndOfPath = true;
-            // todo: attack enemy
-            Debug.Log("attack enemy");
+            // _reachedEndOfPath = true;
+            _anim.Play(name.Replace("(Clone)", "") + "Attack");
             return;
         }
         else
         {
-            _reachedEndOfPath = false;
+            // _anim.Play(name.Replace("(Clone)", "") + "Walk");
+            // _reachedEndOfPath = false;
         }
 
         Vector2 direction = ((Vector2)_path.vectorPath[_currentWayPoint] - _rb.position).normalized;

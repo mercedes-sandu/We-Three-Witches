@@ -32,10 +32,10 @@ public class Projectile : MonoBehaviour
     /// <param name="col"></param>
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.CompareTag("Player"))
+        if (!col.CompareTag("Player") && !col.CompareTag("Background"))
         {
             if (col.CompareTag("Enemy"))
-            {
+            { 
                 col.GetComponent<Enemy>().TakeDamage(damage);
             }
             Destroy(gameObject);
